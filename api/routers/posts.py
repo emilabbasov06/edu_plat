@@ -18,6 +18,14 @@ async def get_posts(db: Session = Depends(get_db)):
     
     return posts
 
+@router.get('/{id}')
+async def get_post(id: int, db: Session = Depends(get_db)):
+    post = db.query(PostModel).filter(PostModel.id == id).first()
+    if not post:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Post with id:{id} does not exist')
+
+    return post
+
 
 @router.post('')
 async def create_post(post: CreatePostSchema, db: Session = Depends(get_db)):
