@@ -1,0 +1,23 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+venv/
+.env/
+*.env
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+
+# SQLite database (if used)
+*.db
+*.sqlite3
+
+# PostgreSQL dump files
+*.sql
+
