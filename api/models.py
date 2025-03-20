@@ -10,9 +10,9 @@ Base = declarative_base()
 # Creating DEFAULT Enum objects
 
 class UserType(enum.Enum):
-    student = 'student'
-    teacher = 'teacher'
-    researcher = 'researcher'
+    student = 'Student'
+    teacher = 'Teacher'
+    researcher = 'Researcher'
 
 class PostCategoryType(enum.Enum):
     general = 'General Education'

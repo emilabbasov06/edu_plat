@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from database import engine, get_db
 from models import Base
-from routers import users, posts
+from routers import users, posts, others
 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
@@ -19,6 +19,7 @@ app.add_middleware(
 
 app.include_router(users.router)
 app.include_router(posts.router)
+app.include_router(others.router)
 
 @app.get('/')
 async def index():
